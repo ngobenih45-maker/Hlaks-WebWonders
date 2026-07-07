@@ -10,7 +10,7 @@ html<!DOCTYPE html>
 </head>
 <body>
 
-    <!-- Header Navigation (Identical to Homepage for Continuity) -->
+    <!-- Header Navigation -->
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo">Hlaks <span>Web Wonders</span></a> 
@@ -20,7 +20,7 @@ html<!DOCTYPE html>
                 <a href="index.html#portfolio">Our Work</a>
                 <a href="index.html#pricing">Pricing</a>
                 <a href="about.html" class="active">About</a>
-                <!-- URL-Encoded WhatsApp link with zero special character bugs -->
+                <!-- Navigation Bar WhatsApp CTA -->
                 <a href="https://wa.me" target="_blank" class="btn whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat Now</a>
             </nav>
         </div>
@@ -50,7 +50,6 @@ html<!DOCTYPE html>
                 </ul>
             </div>
             <div class="about-image-box">
-                <!-- Change this placeholder profile image source to your own if preferred -->
                 <img src="images/mystore.jpg" alt="About Hlaks Web Wonders Agency Workspace Layout" class="about-side-img">
             </div>
         </div>
@@ -60,12 +59,13 @@ html<!DOCTYPE html>
     <section class="about-cta">
         <h2>Ready to Kickstart Your Project?</h2>
         <p>Let's map out a professional platform that sets your business miles ahead of the local competition.</p>
+        <!-- Center Banner WhatsApp CTA -->
         <a href="https://wa.me" target="_blank" class="btn cta-btn">
             <i class="fab fa-whatsapp"></i> Let's Talk Business
         </a>
     </section>
 
-    <!-- Footer (Identical to Homepage for Continuity) -->
+    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Hlaks Web Wonders. Let's take your business online quick, simple, and professional.</p>
         <div class="social-links">
@@ -75,10 +75,14 @@ html<!DOCTYPE html>
             <a href="https://tiktok.com" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
         </div>
     </footer>
-!-- Floating WhatsApp Widget -->
-<a href="https://wa.me" class="whatsapp-floating-widget" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-    <span class="widget-tooltip">Chat with us!</span>
-</a>
+
+    <!-- GUARANTEED FLOATING WHATSAPP WIDGET -->
+    <a href="https://wa.me" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       style="position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: #ffffff; width: 60px; height: 60px; border-radius: 50px; display: flex; justify-content: center; align-items: center; font-size: 32px; box-shadow: 0px 4px 15px rgba(0,0,0,0.3); z-index: 99999; text-decoration: none;">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
 </body>
 </html>
