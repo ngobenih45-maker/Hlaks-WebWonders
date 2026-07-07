@@ -535,3 +535,18 @@ footer {
         display: none;
     }
 }
+css/* ==========================================================================
+   GOOGLE MAPS RESPONSIVE GRID BOX
+   ========================================================================== */
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 450px; /* Controls desktop map height display aspect */
+    position: relative;
+    height: 0;
+}
+
+@media (max-width: 768px) {
+    .map-responsive {
+        padding-bottom: 300px; /* Shrinks map depth on mobile layouts to save vertical scrolling space */
+    }
+}
