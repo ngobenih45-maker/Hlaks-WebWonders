@@ -10,6 +10,11 @@ html<!DOCTYPE html>
     <link rel="stylesheet" href="https://cloudflare.com">
 </head>
 <body>
+    <div class="progress-bar" id="progressBar"></div>
+Add a loading screen After the progress bar:
+<div class="loader" id="loader">
+    <div class="loader-circle"></div>
+</div>
 
     <!-- Header Navigation -->
     <header>
@@ -183,9 +188,17 @@ html<!DOCTYPE html>
         </div>
     </footer>
 <!-- Floating WhatsApp Widget -->
-<a href="https://wa.me/27750981170?text=Hello%20Hlaks%20Web%20Wonders,%20I'm%20interested%20in%20a%20website." target="_blank" class="btn whatsapp-btn">
-                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-                </a>
+<a href="https://wa.me/27750981170?text=Hello%20Hlaks%20Web%20Wonders,%20I'm%20interested%20in%20a%20website."
+class="floating-whatsapp"
+target="_blank">
+
+<i class="fab fa-whatsapp"></i>
+
+<span class="widget-tooltip">
+Chat with us
+</span>
+
+</a>
     <i class="fab fa-whatsapp"></i>
     <span class="widget-tooltip">Chat with us!</span>
 </a>
