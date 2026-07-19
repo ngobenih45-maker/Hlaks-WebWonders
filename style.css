@@ -1,552 +1,3120 @@
-css/* ==========================================================================
-   1. GLOBAL RESET & BASE STYLES
-   ========================================================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
-    background-color: #f8fafc;
-    color: #1e293b;
-}
-
-body {
-    overflow-x: hidden;
-    line-height: 1.6;
-}
+/* ======================================================
+   HLASKS WEB WONDERS
+   PREMIUM CSS
+   PART 1
+====================================================== */
 
-/* Common Interactive Button Setup */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 12px 28px;
-    border-radius: 50px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-/* ==========================================================================
-   2. FIXED HEADER NAVIGATION BAR
-   ========================================================================== */
-header {
-    background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-}
+:root{
 
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+--primary:#00d4ff;
+--secondary:#0077ff;
+--accent:#00ffae;
+--dark:#07111f;
+--dark2:#0d1628;
+--white:#ffffff;
+--grey:#9ca3af;
 
-.logo {
-    font-size: 22px;
-    font-weight: 800;
-    color: #1e3a8a;
-    text-decoration: none;
-}
+--shadow:
+0 10px 30px rgba(0,0,0,.3);
 
-.logo span {
-    color: #25d366;
-}
+--glass:
+rgba(255,255,255,.08);
 
-nav {
-    display: flex;
-    align-items: center;
-    gap: 25px;
 }
 
-nav a {
-    text-decoration: none;
-    color: #475569;
-    font-weight: 500;
-    transition: color 0.2s ease;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-nav a:hover, nav a.active {
-    color: #1e3a8a;
+html{
+scroll-behavior:smooth;
 }
+
+body{
+
+font-family:'Poppins',sans-serif;
+background:
+linear-gradient(135deg,#050b18,#091525,#101d33);
+color:white;
+overflow-x:hidden;
+position:relative;
 
-nav .whatsapp-btn {
-    background-color: #25d366;
-    color: #fff;
-    padding: 8px 18px;
-    font-size: 14px;
 }
+
+/* Animated Background */
+
+body::before{
+
+content:'';
+position:fixed;
 
-nav .whatsapp-btn:hover {
-    background-color: #128c7e;
-    transform: translateY(-2px);
+width:700px;
+height:700px;
+
+background:
+radial-gradient(circle,
+rgba(0,212,255,.25),
+transparent 70%);
+
+top:-250px;
+left:-250px;
+
+filter:blur(40px);
+
+animation:
+blob1 18s infinite alternate ease-in-out;
+
+z-index:-2;
+
 }
+
+body::after{
+
+content:'';
+position:fixed;
+
+width:600px;
+height:600px;
+
+background:
+radial-gradient(circle,
+rgba(0,255,174,.15),
+transparent 70%);
+
+bottom:-250px;
+right:-250px;
 
-/* ==========================================================================
-   3. HERO BANNER DISPLAY PANEL
-   ========================================================================== */
-.hero {
-    margin-top: 75px;
-    background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-    color: #ffffff;
-    padding: 80px 20px;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
+filter:blur(50px);
+
+animation:
+blob2 22s infinite alternate ease-in-out;
+
+z-index:-2;
+
 }
+
+/* Animated Particles */
+
+.particles{
 
-.hero-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
+position:fixed;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+z-index:-1;
+
 }
+
+.particles span{
+
+position:absolute;
+
+display:block;
+
+width:6px;
+height:6px;
+
+background:rgba(255,255,255,.15);
 
-.hero-text h1 {
-    font-size: 42px;
-    line-height: 1.2;
-    margin-bottom: 20px;
+border-radius:50%;
+
+animation:floatParticle linear infinite;
+
 }
+
+/* HEADER */
+
+header{
+
+position:fixed;
+
+top:0;
+
+width:100%;
+
+z-index:999;
+
+background:
+rgba(6,15,30,.55);
+
+backdrop-filter:
+blur(18px);
+
+border-bottom:
 
-.hero-text p {
-    font-size: 18px;
-    color: #cbd5e1;
-    margin-bottom: 35px;
+1px solid rgba(255,255,255,.08);
+
+transition:.4s;
+
 }
 
-.hero-text .whatsapp-btn {
-    background-color: #25d366;
-    color: #ffffff;
-    font-size: 16px;
-    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+header:hover{
+
+background:
+rgba(6,15,30,.85);
+
 }
+
+/* NAVIGATION */
+
+.nav-container{
+
+max-width:1300px;
+
+margin:auto;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
 
-.hero-text .whatsapp-btn:hover {
-    background-color: #128c7e;
-    transform: translateY(-3px);
+padding:
+
+18px 40px;
+
 }
+
+/* PREMIUM LOGO */
+
+.logo{
+
+font-size:34px;
+
+font-weight:800;
+
+text-decoration:none;
+
+color:white;
+
+letter-spacing:1px;
+
+position:relative;
+
+animation:
+logoFloat 5s ease-in-out infinite;
 
-.hero-image-box {
-    text-align: center;
+transition:.4s;
+
 }
+
+.logo span{
+
+background:
+linear-gradient(
+90deg,
+#00d4ff,
+#00ffae,
+#4facfe,
+#00d4ff);
+
+background-size:300%;
+
+-webkit-background-clip:text;
 
-.side-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+-webkit-text-fill-color:transparent;
+
+animation:
+gradientMove 8s linear infinite;
+
 }
+
+.logo::after{
+
+content:'';
+
+position:absolute;
+
+left:0;
 
-/* ==========================================================================
-   4. SERVICES & PORTFOLIO LAYOUT SECTIONS
-   ========================================================================== */
-.services-section, .portfolio-section, .pricing-section, .about-details {
-    padding: 80px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+bottom:-6px;
+
+width:0;
+
+height:3px;
+
+background:
+
+linear-gradient(
+90deg,
+#00d4ff,
+#00ffae);
+
+transition:.4s;
+
 }
+
+.logo:hover::after{
+
+width:100%;
 
-h2 {
-    text-align: center;
-    font-size: 32px;
-    color: #0f172a;
-    margin-bottom: 10px;
 }
+
+.logo:hover{
+
+transform:
+scale(1.08)
+rotate(-2deg);
+
+text-shadow:
+0 0 25px
+#00d4ff;
 
-.section-subtitle {
-    text-align: center;
-    color: #64748b;
-    margin-bottom: 50px;
-    font-size: 16px;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+/* NAV LINKS */
+
+nav{
+
+display:flex;
+align-items:center;
+gap:28px;
+
 }
+
+nav a{
+
+text-decoration:none;
 
-.card {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    border: 1px solid #e2e8f0;
-    transition: transform 0.3s ease;
+font-weight:500;
+
+color:white;
+
+transition:.35s;
+
+position:relative;
+
 }
+
+nav a::after{
+
+content:'';
 
-.card:hover {
-    transform: translateY(-5px);
+position:absolute;
+
+left:0;
+
+bottom:-5px;
+
+width:0;
+
+height:2px;
+
+background:#00d4ff;
+
+transition:.35s;
+
 }
+
+nav a:hover{
 
-.card-img-box {
-    width: 100%;
-    height: 200px;
-    margin-bottom: 20px;
-    overflow: hidden;
-    border-radius: 8px;
+color:#00d4ff;
+
+transform:
+translateY(-2px);
+
 }
+
+nav a:hover::after{
 
-.card-img-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+width:100%;
+
 }
+
+/* BUTTONS */
+
+.btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:10px;
+
+padding:
+
+15px 35px;
+
+border-radius:50px;
+
+background:
+linear-gradient(
+90deg,
+#00d4ff,
+#0077ff);
 
-.card h3 {
-    font-size: 20px;
-    color: #1e3a8a;
-    margin-bottom: 12px;
+text-decoration:none;
+
+font-weight:700;
+
+color:white;
+
+box-shadow:
+
+0 10px 25px
+rgba(0,212,255,.4);
+
+transition:.4s;
+
+position:relative;
+
+overflow:hidden;
+
 }
+
+.btn::before{
+
+content:'';
+
+position:absolute;
 
-.card p {
-    color: #475569;
-    font-size: 15px;
+width:100px;
+height:100%;
+
+background:
+
+rgba(255,255,255,.25);
+
+transform:
+skewX(-25deg)
+translateX(-170px);
+
+transition:.6s;
+
 }
 
-/* Portfolio Work Showcase Cards Layout */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+.btn:hover::before{
+
+transform:
+skewX(-25deg)
+translateX(260px);
+
 }
+
+.btn:hover{
+
+transform:
+translateY(-6px);
+
+box-shadow:
+
+0 20px 40px
+rgba(0,212,255,.55);
 
-.portfolio-card {
-    background: #ffffff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    border: 1px solid #e2e8f0;
 }
 
-.portfolio-card img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
+/* KEYFRAMES */
+
+@keyframes logoFloat{
+
+0%{
+
+transform:
+translateY(0);
+
 }
+
+50%{
 
-.portfolio-info {
-    padding: 25px;
+transform:
+translateY(-8px);
+
 }
+
+100%{
+
+transform:
+translateY(0);
 
-.portfolio-info h4 {
-    font-size: 18px;
-    color: #0f172a;
-    margin-bottom: 8px;
 }
 
-/* ==========================================================================
-   5. PRICING SECTIONS & PLAN PANELS
-   ========================================================================== */
-.pricing-card {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    padding: 40px 30px;
 }
+
+@keyframes gradientMove{
+
+0%{
+
+background-position:0%;
 
-.pricing-card.featured {
-    border: 2px solid #1e3a8a;
-    box-shadow: 0 10px 15px -3px rgba(30, 58, 138, 0.1);
-    transform: scale(1.03);
 }
 
-.pricing-card.featured:hover {
-    transform: scale(1.03) translateY(-5px);
+100%{
+
+background-position:300%;
+
 }
 
-.badge {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background-color: #1e3a8a;
-    color: #ffffff;
-    padding: 4px 12px;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    border-radius: 20px;
 }
+
+@keyframes blob1{
+
+0%{
+
+transform:
+translate(0,0);
 
-.pricing-card h3 {
-    font-size: 22px;
-    color: #0f172a;
 }
 
-.price {
-    font-size: 36px;
-    font-weight: 800;
-    color: #1e3a8a;
-    margin: 15px 0 25px 0;
+100%{
+
+transform:
+translate(120px,90px);
+
 }
 
-.pricing-card ul {
-    list-style: none;
-    margin-bottom: 35px;
-    flex-grow: 1;
 }
+
+@keyframes blob2{
 
-.pricing-card ul li {
-    padding: 8px 0;
-    color: #475569;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+0%{
+
+transform:
+translate(0,0);
+
 }
+
+100%{
 
-.pricing-card ul li::before {
-    content: "✓";
-    color: #25d366;
-    font-weight: bold;
+transform:
+translate(-120px,-80px);
+
 }
 
-.plan-btn {
-    background-color: #1e3a8a;
-    color: #ffffff;
-    width: 100%;
 }
+
+@keyframes floatParticle{
+
+from{
 
-.plan-btn:hover {
-    background-color: #1d4ed8;
+transform:
+translateY(110vh);
+
 }
+
+to{
+
+transform:
+translateY(-10vh);
 
-.pricing-card.featured .plan-btn {
-    background-color: #25d366;
 }
 
-.pricing-card.featured .plan-btn:hover {
-    background-color: #128c7e;
 }
+/*=====================================================
+   HLASKS WEB WONDERS
+   PREMIUM CSS
+   PART 2 - HERO SECTION
+======================================================*/
 
-/* ==========================================================================
-   6. INNER PAGES (ABOUT PAGE STYLES)
-   ========================================================================== */
-.about-hero {
-    margin-top: 75px;
-    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('images/mystore(6).jpg') no-repeat center center/cover;
-    color: white;
-    padding: 100px 20px;
-    text-align: center;
+.hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:140px 8% 80px;
+    overflow:hidden;
 }
 
-.about-hero-content max-width {
-    max-width: 800px;
-    margin: 0 auto;
+/* Animated glow circles */
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:rgba(0,212,255,.12);
+    filter:blur(80px);
+    top:-120px;
+    right:-120px;
+    animation:heroGlow1 12s ease-in-out infinite alternate;
 }
 
-.about-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
+.hero::after{
+    content:"";
+    position:absolute;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    background:rgba(0,255,174,.10);
+    filter:blur(70px);
+    bottom:-120px;
+    left:-120px;
+    animation:heroGlow2 15s ease-in-out infinite alternate;
 }
 
-.about-text-box h2 {
-    text-align: left;
-    margin-bottom: 20px;
+.hero-container{
+    max-width:1300px;
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+    z-index:2;
 }
 
-.about-text-box p {
-    margin-bottom: 15px;
-    color: #475569;
+/* Left side */
+
+.hero-text{
+    animation:fadeLeft 1.2s ease;
 }
 
-.about-perks {
-    list-style: none;
-    margin-top: 20px;
+.hero-text h1{
+    font-size:65px;
+    font-weight:800;
+    line-height:1.1;
+    margin-bottom:25px;
+    background:linear-gradient(
+        90deg,
+        #ffffff,
+        #00d4ff,
+        #00ffae
+    );
+    background-size:300%;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:textGradient 6s linear infinite;
 }
 
-.about-perks li {
-    padding: 8px 0;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: #1e293b;
-    font-weight: 500;
+.hero-text p{
+    font-size:20px;
+    color:#cbd5e1;
+    line-height:1.9;
+    max-width:650px;
+    margin-bottom:35px;
 }
+
+/* Hero image */
 
-.about-perks li i {
-    color: #25d366;
+.hero-image-box{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    animation:fadeRight 1.2s ease;
 }
 
-.about-side-img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+.hero-image-box::before{
+    content:"";
+    position:absolute;
+    width:105%;
+    height:105%;
+    border-radius:30px;
+    background:linear-gradient(
+        45deg,
+        #00d4ff,
+        #00ffae,
+        #0077ff
+    );
+    filter:blur(25px);
+    opacity:.35;
+    animation:borderGlow 5s linear infinite;
 }
 
-.about-cta {
-    background-color: #f1f5f9;
-    text-align: center;
-    padding: 60px 20px;
+.side-image{
+    position:relative;
+    width:100%;
+    max-width:520px;
+    border-radius:25px;
+    z-index:2;
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.45);
+    transition:.5s;
+    animation:floatingImage 6s ease-in-out infinite;
 }
 
-.about-cta h2 {
-    margin-bottom: 10px;
+.side-image:hover{
+    transform:
+        scale(1.04)
+        rotate(-2deg);
 }
 
-.about-cta p {
-    color: #475569;
-    margin-bottom: 25px;
+/* Scroll indicator */
+
+.scroll-down{
+    position:absolute;
+    bottom:35px;
+    left:50%;
+    transform:translateX(-50%);
+    width:40px;
+    height:70px;
+    border:2px solid rgba(255,255,255,.3);
+    border-radius:30px;
 }
 
-.cta-btn {
-    background-color: #25d366;
-    color: white;
+.scroll-down::before{
+    content:"";
+    position:absolute;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#00d4ff;
+    left:50%;
+    transform:translateX(-50%);
+    animation:scrollMouse 2s infinite;
 }
 
-.cta-btn:hover {
-    background-color: #128c7e;
+/* Floating badges */
+
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 22px;
+    border-radius:40px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.1);
+    margin-bottom:25px;
+    animation:badgeFloat 4s infinite;
 }
 
-/* ==========================================================================
-   7. PRODUCTION COMPLIANT FOOTER
-   ========================================================================== */
-footer {
-    background-color: #0f172a;
-    color: #94a3b8;
-    padding: 40px 20px;
+.hero-badge i{
+    color:#00ffae;
 }
+
+/* Animations */
 
-/* ==========================================================================
-   8. MOBILE VIEWPORTS MEDIA QUERIES
-   ========================================================================== */
-@media (max-width: 992px) {
-    .hero-container, .about-container {
-        grid-template-columns: 1fr;
-        text-align: center;
+@keyframes heroGlow1{
+    from{
+        transform:translate(0,0);
     }
-    
-    .about-text-box h2 {
-        text-align: center;
-    }
-    
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .pricing-card.featured {
-        transform: none;
-    }
-    
-    .pricing-card.featured:hover {
-        transform: translateY(-5px);
+    to{
+        transform:translate(-80px,60px);
     }
 }
 
-@media (max-width: 768px) {
-    nav {
-        display: none; /* Recommended task: set up a mobile navigation burger toggle next */
+@keyframes heroGlow2{
+    from{
+        transform:translate(0,0);
     }
-    
-    .hero-text h1 {
-        font-size: 32px;
-    }
-}
-/* Floating WhatsApp Widget Styling */
-.whatsapp-floating-widget {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25d366;
-    color: #ffffff;
-    width: 60px;
-    height: 60px;
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 32px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-    z-index: 9999;
-    text-decoration: none;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-/* Hover Zoom Effect */
-.whatsapp-floating-widget:hover {
-    background-color: #128c7e;
-    transform: scale(1.1);
-}
-
-/* Tooltip Popup Box */
-.whatsapp-floating-widget .widget-tooltip {
-    position: absolute;
-    right: 75px;
-    background-color: #333333;
-    color: #ffffff;
-    padding: 8px 14px;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 6px;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
-}
-
-/* Little triangle pointer for the tooltip box */
-.whatsapp-floating-widget .widget-tooltip::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: -6px;
-    transform: translateY(-50%);
-    border-width: 6px 0 6px 6px;
-    border-style: solid;
-    border-color: transparent transparent transparent #333333;
-}
-
-/* Show Tooltip on Hover */
-.whatsapp-floating-widget:hover .widget-tooltip {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Mobile Layout Responsive Viewport Fix */
-@media (max-width: 768px) {
-    .whatsapp-floating-widget {
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        font-size: 26px;
-    }
-    /* Hide the tooltip on smartphones to prevent screen clutter */
-    .whatsapp-floating-widget .widget-tooltip {
-        display: none;
+    to{
+        transform:translate(80px,-60px);
     }
 }
-css/* ==========================================================================
-   GOOGLE MAPS RESPONSIVE GRID BOX
-   ========================================================================== */
-.map-responsive {
-    overflow: hidden;
-    padding-bottom: 450px; /* Controls desktop map height display aspect */
-    position: relative;
-    height: 0;
-}
 
-@media (max-width: 768px) {
-    .map-responsive {
-        padding-bottom: 300px; /* Shrinks map depth on mobile layouts to save vertical scrolling space */
+@keyframes fadeLeft{
+    from{
+        opacity:0;
+        transform:translateX(-60px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
     }
 }
+
+@keyframes fadeRight{
+    from{
+        opacity:0;
+        transform:translateX(60px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes floatingImage{
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-18px);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+
+@keyframes borderGlow{
+    0%{
+        filter:blur(25px) hue-rotate(0deg);
+    }
+    100%{
+        filter:blur(25px) hue-rotate(360deg);
+    }
+}
+
+@keyframes textGradient{
+    0%{
+        background-position:0%;
+    }
+    100%{
+        background-position:300%;
+    }
+}
+
+@keyframes scrollMouse{
+    0%{
+        top:10px;
+        opacity:1;
+    }
+    100%{
+        top:42px;
+        opacity:0;
+    }
+}
+
+@keyframes badgeFloat{
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-8px);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+/*=====================================================
+   HLASKS WEB WONDERS
+   PREMIUM CSS
+   PART 3 - SERVICES SECTION
+======================================================*/
+
+.services-section{
+    padding:120px 8%;
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(180deg,#08111f,#0b1830);
+}
+
+.services-section::before{
+    content:"";
+    position:absolute;
+    width:700px;
+    height:700px;
+    background:radial-gradient(circle,
+    rgba(0,212,255,.08),
+    transparent 70%);
+    top:-250px;
+    right:-250px;
+    filter:blur(30px);
+    animation:rotateGlow 20s linear infinite;
+}
+
+.services-section h2{
+    font-size:3rem;
+    text-align:center;
+    margin-bottom:20px;
+    color:#fff;
+    position:relative;
+}
+
+.services-section h2::after{
+    content:"";
+    display:block;
+    width:120px;
+    height:5px;
+    margin:15px auto 0;
+    border-radius:20px;
+    background:linear-gradient(90deg,#00d4ff,#00ffae);
+}
+
+/* GRID */
+
+.grid{
+    max-width:1300px;
+    margin:70px auto 0;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
+}
+
+/* SERVICE CARD */
+
+.card{
+    position:relative;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    overflow:hidden;
+    transition:.5s;
+    box-shadow:0 15px 35px rgba(0,0,0,.3);
+}
+
+/* Animated top border */
+
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:4px;
+    background:linear-gradient(
+        90deg,
+        #00d4ff,
+        #00ffae,
+        #0077ff);
+    transition:.8s;
+}
+
+.card:hover::before{
+    left:0;
+}
+
+/* Glow */
+
+.card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        135deg,
+        rgba(0,212,255,.08),
+        transparent,
+        rgba(0,255,174,.08));
+    opacity:0;
+    transition:.5s;
+}
+
+.card:hover::after{
+    opacity:1;
+}
+
+/* Hover */
+
+.card:hover{
+
+    transform:
+    translateY(-18px)
+    rotateX(5deg);
+
+    box-shadow:
+    0 25px 60px rgba(0,212,255,.25);
+
+}
+
+/* Image */
+
+.card-img-box{
+
+    overflow:hidden;
+
+}
+
+.card img{
+
+    width:100%;
+    display:block;
+    transition:.7s;
+
+}
+
+.card:hover img{
+
+    transform:
+    scale(1.12);
+
+}
+
+/* Shine Effect */
+
+.card-img-box::after{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-120%;
+
+width:70px;
+
+height:100%;
+
+background:
+
+rgba(255,255,255,.35);
+
+transform:
+
+skewX(-25deg);
+
+transition:1s;
+
+}
+
+.card:hover .card-img-box::after{
+
+left:150%;
+
+}
+
+/* Content */
+
+.card h3{
+
+padding:25px 25px 10px;
+
+font-size:24px;
+
+font-weight:700;
+
+color:white;
+
+}
+
+.card p{
+
+padding:0 25px 30px;
+
+line-height:1.9;
+
+color:#cbd5e1;
+
+}
+
+/* Floating Icon */
+
+.card h3::before{
+
+content:"🚀";
+
+margin-right:10px;
+
+display:inline-block;
+
+animation:iconFloat 2s infinite;
+
+}
+
+/* Card Glow Ring */
+
+.card:hover{
+
+border-color:
+
+rgba(0,212,255,.35);
+
+}
+
+/* Floating Decorative Circles */
+
+.card span.circle{
+
+position:absolute;
+
+border-radius:50%;
+
+background:
+
+rgba(0,212,255,.12);
+
+filter:blur(10px);
+
+animation:
+
+circleFloat 8s infinite alternate;
+
+}
+
+.card span.circle.one{
+
+width:80px;
+height:80px;
+
+top:-20px;
+right:-20px;
+
+}
+
+.card span.circle.two{
+
+width:50px;
+height:50px;
+
+bottom:-15px;
+left:-15px;
+
+animation-delay:2s;
+
+}
+
+/* Button inside cards */
+
+.card .btn{
+
+margin:
+
+0 25px 30px;
+
+}
+
+/* Hover text */
+
+.card:hover h3{
+
+color:#00d4ff;
+
+transition:.4s;
+
+}
+
+/* Animations */
+
+@keyframes rotateGlow{
+
+0%{
+
+transform:rotate(0deg);
+
+}
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+@keyframes iconFloat{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-6px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes circleFloat{
+
+0%{
+
+transform:
+
+translateY(0)
+translateX(0);
+
+}
+
+100%{
+
+transform:
+
+translateY(-20px)
+translateX(20px);
+
+}
+
+}
+
+/* Reveal animation */
+
+.card{
+
+opacity:0;
+
+transform:translateY(60px);
+
+animation:
+
+cardReveal 1s forwards;
+
+}
+
+.card:nth-child(1){
+
+animation-delay:.2s;
+
+}
+
+.card:nth-child(2){
+
+animation-delay:.5s;
+
+}
+
+.card:nth-child(3){
+
+animation-delay:.8s;
+
+}
+
+@keyframes cardReveal{
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+/*=====================================================
+  HLASKS WEB WONDERS
+  PREMIUM CSS
+  PART 4 - PORTFOLIO SECTION
+======================================================*/
+
+.portfolio-section{
+    padding:120px 8%;
+    background:linear-gradient(180deg,#08111f,#0c1a30,#08111f);
+    position:relative;
+    overflow:hidden;
+}
+
+.portfolio-section::before{
+    content:"";
+    position:absolute;
+    width:800px;
+    height:800px;
+    background:radial-gradient(circle,
+    rgba(0,212,255,.08),
+    transparent 70%);
+    top:-350px;
+    left:-300px;
+    filter:blur(40px);
+    animation:portfolioGlow 18s linear infinite;
+}
+
+.portfolio-section h2{
+    text-align:center;
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.portfolio-section h2::after{
+    content:"";
+    display:block;
+    width:130px;
+    height:5px;
+    margin:15px auto;
+    border-radius:50px;
+    background:linear-gradient(90deg,#00d4ff,#00ffae);
+}
+
+.portfolio-grid{
+    max-width:1300px;
+    margin:70px auto 0;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:35px;
+}
+
+.portfolio-card{
+    position:relative;
+    overflow:hidden;
+    border-radius:25px;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.08);
+    transition:.6s;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+}
+
+.portfolio-card:hover{
+    transform:translateY(-15px) scale(1.02);
+    box-shadow:0 25px 70px rgba(0,212,255,.30);
+}
+
+.portfolio-card img{
+    width:100%;
+    display:block;
+    transition:1s;
+}
+
+.portfolio-card:hover img{
+    transform:scale(1.12);
+}
+
+/* Dark overlay */
+
+.portfolio-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.85),
+        rgba(0,0,0,.15));
+    opacity:0;
+    transition:.5s;
+    z-index:2;
+}
+
+.portfolio-card:hover::before{
+    opacity:1;
+}
+
+/* Glowing border */
+
+.portfolio-card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border:2px solid transparent;
+    border-radius:25px;
+    background:
+    linear-gradient(#0000,#0000) padding-box,
+    linear-gradient(90deg,#00d4ff,#00ffae,#0077ff) border-box;
+    opacity:0;
+    transition:.5s;
+}
+
+.portfolio-card:hover::after{
+    opacity:1;
+}
+
+/* Info */
+
+.portfolio-info{
+    position:absolute;
+    left:30px;
+    right:30px;
+    bottom:-180px;
+    z-index:3;
+    transition:.6s;
+}
+
+.portfolio-card:hover .portfolio-info{
+    bottom:35px;
+}
+
+.portfolio-info h4{
+    font-size:28px;
+    margin-bottom:12px;
+    color:#fff;
+}
+
+.portfolio-info p{
+    color:#d1d5db;
+    line-height:1.8;
+}
+
+/* Visit button */
+
+.portfolio-btn{
+
+display:inline-block;
+
+margin-top:18px;
+
+padding:12px 28px;
+
+border-radius:40px;
+
+text-decoration:none;
+
+font-weight:600;
+
+color:#fff;
+
+background:
+linear-gradient(90deg,#00d4ff,#0077ff);
+
+transition:.4s;
+
+}
+
+.portfolio-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 10px 30px rgba(0,212,255,.45);
+
+}
+
+/* Shine effect */
+
+.portfolio-card .shine{
+
+position:absolute;
+
+top:0;
+
+left:-130%;
+
+width:80px;
+
+height:100%;
+
+background:
+
+rgba(255,255,255,.35);
+
+transform:
+skewX(-25deg);
+
+transition:1s;
+
+z-index:4;
+
+}
+
+.portfolio-card:hover .shine{
+
+left:160%;
+
+}
+
+/* Floating badge */
+
+.portfolio-badge{
+
+position:absolute;
+
+top:20px;
+
+left:20px;
+
+padding:10px 18px;
+
+border-radius:30px;
+
+background:
+
+rgba(255,255,255,.15);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.15);
+
+font-size:14px;
+
+font-weight:700;
+
+color:#fff;
+
+z-index:4;
+
+animation:badgePulse 3s infinite;
+
+}
+
+/* Floating decorative circles */
+
+.portfolio-circle{
+
+position:absolute;
+
+border-radius:50%;
+
+background:
+
+rgba(0,212,255,.10);
+
+filter:blur(10px);
+
+animation:circleMove 10s infinite alternate;
+
+}
+
+.portfolio-circle.one{
+
+width:70px;
+height:70px;
+
+top:-20px;
+right:-20px;
+
+}
+
+.portfolio-circle.two{
+
+width:45px;
+height:45px;
+
+bottom:-15px;
+left:-15px;
+
+animation-delay:3s;
+
+}
+
+/* Animations */
+
+@keyframes portfolioGlow{
+
+0%{
+transform:rotate(0deg);
+}
+
+100%{
+transform:rotate(360deg);
+}
+
+}
+
+@keyframes badgePulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+@keyframes circleMove{
+
+0%{
+transform:translate(0,0);
+}
+
+100%{
+transform:translate(20px,-20px);
+}
+
+}
+
+/* Fade animation */
+
+.portfolio-card{
+
+opacity:0;
+
+transform:translateY(70px);
+
+animation:portfolioReveal 1s forwards;
+
+}
+
+.portfolio-card:nth-child(1){
+
+animation-delay:.3s;
+
+}
+
+.portfolio-card:nth-child(2){
+
+animation-delay:.6s;
+
+}
+
+.portfolio-card:nth-child(3){
+
+animation-delay:.9s;
+
+}
+
+@keyframes portfolioReveal{
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+/* =====================================================
+   PREMIUM PRICING SECTION
+===================================================== */
+
+.pricing-section{
+    position:relative;
+    padding:120px 8%;
+    background:linear-gradient(180deg,#08111f,#0d1628,#08111f);
+    overflow:hidden;
+}
+
+.pricing-section::before{
+    content:"";
+    position:absolute;
+    width:700px;
+    height:700px;
+    top:-300px;
+    right:-250px;
+    border-radius:50%;
+    background:radial-gradient(circle,
+    rgba(0,212,255,.12),
+    transparent 70%);
+    filter:blur(40px);
+    animation:pricingGlow 20s linear infinite;
+}
+
+.pricing-section h2{
+    font-size:3rem;
+    text-align:center;
+    margin-bottom:15px;
+    color:#fff;
+}
+
+.pricing-section .section-subtitle{
+    text-align:center;
+    color:#b8c5d6;
+    margin-bottom:70px;
+    font-size:18px;
+}
+
+/* Pricing Grid */
+
+.pricing-section .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
+}
+
+/* Pricing Card */
+
+.pricing-card{
+
+    position:relative;
+
+    padding:45px 35px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.5s;
+
+    overflow:hidden;
+
+}
+
+.pricing-card:hover{
+
+transform:
+translateY(-18px);
+
+box-shadow:
+
+0 30px 60px
+rgba(0,212,255,.25);
+
+}
+
+/* Animated border */
+
+.pricing-card::before{
+
+content:"";
+
+position:absolute;
+
+left:-100%;
+
+top:0;
+
+width:100%;
+
+height:4px;
+
+background:
+
+linear-gradient(
+90deg,
+#00d4ff,
+#00ffae,
+#0077ff);
+
+transition:1s;
+
+}
+
+.pricing-card:hover::before{
+
+left:0;
+
+}
+
+/* Featured Plan */
+
+.featured{
+
+transform:scale(1.05);
+
+border:2px solid
+#00d4ff;
+
+box-shadow:
+
+0 0 40px
+rgba(0,212,255,.35);
+
+}
+
+.featured:hover{
+
+transform:
+scale(1.08)
+translateY(-15px);
+
+}
+
+/* Most Popular Badge */
+
+.badge{
+
+position:absolute;
+
+top:20px;
+
+right:-40px;
+
+background:
+
+linear-gradient(
+90deg,
+#00d4ff,
+#0077ff);
+
+padding:12px 50px;
+
+font-weight:700;
+
+font-size:13px;
+
+transform:
+rotate(45deg);
+
+box-shadow:
+
+0 8px 20px
+rgba(0,0,0,.35);
+
+}
+
+/* Package Name */
+
+.pricing-card h3{
+
+font-size:28px;
+
+margin-bottom:20px;
+
+color:white;
+
+}
+
+/* Price */
+
+.price{
+
+font-size:55px;
+
+font-weight:800;
+
+margin-bottom:25px;
+
+background:
+
+linear-gradient(
+90deg,
+#00ffae,
+#00d4ff);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+animation:
+priceGlow 3s infinite;
+
+}
+
+/* Features */
+
+.pricing-card ul{
+
+list-style:none;
+
+margin-bottom:35px;
+
+}
+
+.pricing-card ul li{
+
+padding:14px 0;
+
+border-bottom:
+
+1px solid
+rgba(255,255,255,.08);
+
+color:#d1d5db;
+
+transition:.4s;
+
+}
+
+.pricing-card ul li:hover{
+
+padding-left:12px;
+
+color:#00ffae;
+
+}
+
+/* Tick */
+
+.pricing-card ul li::before{
+
+content:"✔";
+
+margin-right:10px;
+
+color:#00ffae;
+
+font-weight:bold;
+
+}
+
+/* Button */
+
+.pricing-card .btn{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+/* Floating circles */
+
+.pricing-card::after{
+
+content:"";
+
+position:absolute;
+
+width:180px;
+
+height:180px;
+
+border-radius:50%;
+
+background:
+
+rgba(0,212,255,.08);
+
+right:-70px;
+
+bottom:-70px;
+
+filter:blur(12px);
+
+transition:.5s;
+
+}
+
+.pricing-card:hover::after{
+
+transform:scale(1.3);
+
+}
+
+/* Shine */
+
+.pricing-card:hover{
+
+background:
+
+rgba(255,255,255,.08);
+
+}
+
+/* Animations */
+
+@keyframes pricingGlow{
+
+0%{
+
+transform:rotate(0deg);
+
+}
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+@keyframes priceGlow{
+
+0%{
+
+filter:drop-shadow(0 0 8px rgba(0,255,174,.2));
+
+}
+
+50%{
+
+filter:drop-shadow(0 0 18px rgba(0,212,255,.8));
+
+}
+
+100%{
+
+filter:drop-shadow(0 0 8px rgba(0,255,174,.2));
+
+}
+
+}
+
+/* Reveal */
+
+.pricing-card{
+
+opacity:0;
+
+transform:translateY(60px);
+
+animation:
+
+pricingReveal
+1s forwards;
+
+}
+
+.pricing-card:nth-child(1){
+
+animation-delay:.2s;
+
+}
+
+.pricing-card:nth-child(2){
+
+animation-delay:.5s;
+
+}
+
+.pricing-card:nth-child(3){
+
+animation-delay:.8s;
+
+}
+
+@keyframes pricingReveal{
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+/*=====================================================
+  HLASKS WEB WONDERS
+  PREMIUM CSS
+  PART 6 - FOOTER & FLOATING ELEMENTS
+======================================================*/
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+    position:relative;
+    background:linear-gradient(180deg,#050b18,#08111f);
+    padding:70px 8% 35px;
+    overflow:hidden;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+footer::before{
+    content:"";
+    position:absolute;
+    top:-180px;
+    left:50%;
+    transform:translateX(-50%);
+    width:700px;
+    height:350px;
+    border-radius:50%;
+    background:radial-gradient(circle,
+    rgba(0,212,255,.10),
+    transparent 70%);
+    filter:blur(40px);
+}
+
+.footer-container{
+    position:relative;
+    z-index:2;
+}
+
+footer p{
+    color:#cbd5e1;
+    line-height:1.8;
+}
+
+/* ==========================
+   SOCIAL ICONS
+========================== */
+
+.social-links{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    margin:30px 0;
+}
+
+.social-links a{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    text-decoration:none;
+    color:#fff;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(12px);
+    transition:.4s;
+}
+
+.social-links a:hover{
+    transform:translateY(-10px) rotate(360deg);
+    background:linear-gradient(135deg,#00d4ff,#0077ff);
+    box-shadow:0 15px 35px rgba(0,212,255,.4);
+}
+
+/* ==========================
+   POPIA BOX
+========================== */
+
+.popia-disclaimer{
+    margin-top:35px;
+    padding-top:25px;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:#94a3b8;
+    font-size:13px;
+    line-height:1.8;
+}
+
+/* ==========================
+   FLOATING WHATSAPP
+========================== */
+
+.whatsapp-btn{
+    transition:.4s;
+}
+
+.floating-whatsapp{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:72px;
+
+    height:72px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:linear-gradient(
+    135deg,
+    #25D366,
+    #128C7E);
+
+    color:white;
+
+    font-size:34px;
+
+    text-decoration:none;
+
+    z-index:9999;
+
+    box-shadow:
+
+    0 20px 45px
+    rgba(37,211,102,.45);
+
+    animation:
+    whatsappFloat 3s infinite;
+
+    transition:.4s;
+
+}
+
+.floating-whatsapp:hover{
+
+transform:
+scale(1.12)
+rotate(12deg);
+
+box-shadow:
+
+0 25px 60px
+rgba(37,211,102,.65);
+
+}
+
+/* Ripple */
+
+.floating-whatsapp::before{
+
+content:"";
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+border-radius:50%;
+
+border:2px solid #25D366;
+
+animation:
+ripple 2s infinite;
+
+}
+
+/* Tooltip */
+
+.widget-tooltip{
+
+position:absolute;
+
+right:90px;
+
+background:#111827;
+
+padding:10px 18px;
+
+border-radius:10px;
+
+white-space:nowrap;
+
+font-size:14px;
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.3s;
+
+}
+
+.floating-whatsapp:hover
+.widget-tooltip{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+/* ==========================
+   SCROLL TO TOP
+========================== */
+
+.scroll-top{
+
+position:fixed;
+
+left:25px;
+
+bottom:25px;
+
+width:60px;
+
+height:60px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:linear-gradient(
+135deg,
+#00d4ff,
+#0077ff);
+
+color:white;
+
+font-size:22px;
+
+text-decoration:none;
+
+box-shadow:
+
+0 20px 40px
+rgba(0,212,255,.35);
+
+transition:.4s;
+
+z-index:9999;
+
+}
+
+.scroll-top:hover{
+
+transform:
+translateY(-8px);
+
+}
+
+/* ==========================
+   CUSTOM SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+
+width:12px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#07111f;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:
+linear-gradient(
+180deg,
+#00d4ff,
+#0077ff);
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:
+linear-gradient(
+180deg,
+#00ffae,
+#00d4ff);
+
+}
+
+/* ==========================
+   SELECTION COLOR
+========================== */
+
+::selection{
+
+background:#00d4ff;
+
+color:#08111f;
+
+}
+
+/* ==========================
+   ANIMATIONS
+========================== */
+
+@keyframes whatsappFloat{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes ripple{
+
+0%{
+
+transform:scale(1);
+
+opacity:.8;
+
+}
+
+100%{
+
+transform:scale(1.8);
+
+opacity:0;
+
+}
+
+}
+
+/* =====================================================
+   HLASKS WEB WONDERS
+   PART 7 - PREMIUM ANIMATIONS
+===================================================== */
+
+/* Smooth Fade In */
+
+.fade-up{
+
+opacity:0;
+
+transform:translateY(80px);
+
+animation:fadeUp 1s ease forwards;
+
+}
+
+.fade-left{
+
+opacity:0;
+
+transform:translateX(-80px);
+
+animation:fadeLeft 1s ease forwards;
+
+}
+
+.fade-right{
+
+opacity:0;
+
+transform:translateX(80px);
+
+animation:fadeRight 1s ease forwards;
+
+}
+
+.zoom-in{
+
+opacity:0;
+
+transform:scale(.8);
+
+animation:zoomIn 1s forwards;
+
+}
+
+/* Animated Headings */
+
+h1,h2,h3{
+
+position:relative;
+
+}
+
+h2::before{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+bottom:-18px;
+
+transform:translateX(-50%);
+
+width:80px;
+
+height:5px;
+
+border-radius:50px;
+
+background:
+
+linear-gradient(90deg,#00d4ff,#00ffae);
+
+animation:headingGlow 3s infinite;
+
+}
+
+/* Neon Glow on Hover */
+
+.card:hover,
+.portfolio-card:hover,
+.pricing-card:hover{
+
+box-shadow:
+
+0 0 15px rgba(0,212,255,.25),
+
+0 0 35px rgba(0,212,255,.18),
+
+0 0 70px rgba(0,212,255,.10);
+
+}
+
+/* Floating Images */
+
+img{
+
+transition:.6s;
+
+}
+
+img:hover{
+
+transform:
+
+scale(1.04);
+
+}
+
+/* Glass Effect */
+
+.card,
+.pricing-card,
+.portfolio-card{
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+}
+
+/* Animated Gradient Text */
+
+.gradient-text{
+
+background:
+
+linear-gradient(
+90deg,
+#00d4ff,
+#00ffae,
+#0077ff,
+#00d4ff);
+
+background-size:300%;
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+animation:textMove 6s linear infinite;
+
+}
+
+/* Button Shine */
+
+.btn{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.btn::after{
+
+content:"";
+
+position:absolute;
+
+left:-120%;
+
+top:0;
+
+width:60px;
+
+height:100%;
+
+background:
+
+rgba(255,255,255,.35);
+
+transform:
+
+skewX(-25deg);
+
+transition:1s;
+
+}
+
+.btn:hover::after{
+
+left:180%;
+
+}
+
+/* Card Border Animation */
+
+.card{
+
+border:
+
+1px solid rgba(255,255,255,.08);
+
+}
+
+.card:hover{
+
+border-color:#00d4ff;
+
+}
+
+/* Animated Divider */
+
+.section-divider{
+
+width:100%;
+
+height:2px;
+
+margin:70px auto;
+
+background:
+
+linear-gradient(
+90deg,
+transparent,
+#00d4ff,
+transparent);
+
+animation:dividerMove 4s linear infinite;
+
+}
+
+/* Floating Background Shapes */
+
+.shape{
+
+position:absolute;
+
+border-radius:50%;
+
+background:
+
+rgba(255,255,255,.05);
+
+filter:blur(4px);
+
+animation:shapeMove 15s infinite alternate;
+
+}
+
+.shape.one{
+
+width:120px;
+
+height:120px;
+
+top:10%;
+
+left:5%;
+
+}
+
+.shape.two{
+
+width:80px;
+
+height:80px;
+
+bottom:10%;
+
+right:5%;
+
+animation-delay:2s;
+
+}
+
+.shape.three{
+
+width:150px;
+
+height:150px;
+
+top:60%;
+
+left:70%;
+
+animation-delay:5s;
+
+}
+
+/* Keyframes */
+
+@keyframes fadeUp{
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes fadeLeft{
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+@keyframes fadeRight{
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+@keyframes zoomIn{
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+@keyframes headingGlow{
+
+0%{
+
+box-shadow:0 0 5px #00d4ff;
+
+}
+
+50%{
+
+box-shadow:0 0 25px #00ffae;
+
+}
+
+100%{
+
+box-shadow:0 0 5px #00d4ff;
+
+}
+
+}
+
+@keyframes dividerMove{
+
+0%{
+
+background-position:-500px;
+
+}
+
+100%{
+
+background-position:500px;
+
+}
+
+}
+
+@keyframes textMove{
+
+0%{
+
+background-position:0%;
+
+}
+
+100%{
+
+background-position:300%;
+
+}
+
+}
+
+@keyframes shapeMove{
+
+0%{
+
+transform:
+
+translateY(0)
+rotate(0deg);
+
+}
+
+100%{
+
+transform:
+
+translateY(-40px)
+rotate(360deg);
+
+}
+
+}
+
+/* Hover Lift */
+
+.card:hover,
+.portfolio-card:hover,
+.pricing-card:hover{
+
+transform:
+
+translateY(-15px);
+
+transition:.5s;
+
+}
+
+/* Premium Shadow */
+
+.card,
+.portfolio-card,
+.pricing-card{
+
+box-shadow:
+
+0 20px 50px rgba(0,0,0,.25);
+
+}
+
+/* Links */
+
+a{
+
+transition:.3s;
+
+}
+
+a:hover{
+
+color:#00d4ff;
+
+}
+/*=====================================================
+  HLASKS WEB WONDERS
+  PART 8 - RESPONSIVE & FINAL POLISH
+======================================================*/
+
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
+
+@media (max-width:1200px){
+
+.hero-container{
+grid-template-columns:1fr;
+text-align:center;
+gap:50px;
+}
+
+.hero-text p{
+margin:25px auto;
+}
+
+.side-image{
+max-width:650px;
+}
+
+}
+
+@media (max-width:992px){
+
+.nav-container{
+
+padding:18px 25px;
+
+flex-wrap:wrap;
+
+}
+
+nav{
+
+gap:15px;
+
+justify-content:center;
+
+margin-top:15px;
+
+}
+
+.grid,
+.portfolio-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.hero h1{
+
+font-size:52px;
+
+}
+
+}
+
+@media (max-width:768px){
+
+.hero{
+
+padding-top:140px;
+
+}
+
+.hero h1{
+
+font-size:40px;
+
+}
+
+.hero p{
+
+font-size:17px;
+
+}
+
+h2{
+
+font-size:34px;
+
+}
+
+.logo{
+
+font-size:28px;
+
+}
+
+.btn{
+
+width:100%;
+
+}
+
+.pricing-card,
+.card,
+.portfolio-card{
+
+padding:25px;
+
+}
+
+.social-links{
+
+flex-wrap:wrap;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.hero h1{
+
+font-size:32px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+}
+
+.nav-container{
+
+padding:15px;
+
+}
+
+.logo{
+
+font-size:24px;
+
+}
+
+h2{
+
+font-size:28px;
+
+}
+
+.price{
+
+font-size:42px;
+
+}
+
+}
+
+/* ==========================
+   LOADING SCREEN
+========================== */
+
+.loader{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:#07111f;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:99999;
+
+transition:.8s;
+
+}
+
+.loader.hidden{
+
+opacity:0;
+
+visibility:hidden;
+
+}
+
+.loader-circle{
+
+width:90px;
+
+height:90px;
+
+border-radius:50%;
+
+border:8px solid rgba(255,255,255,.15);
+
+border-top-color:#00d4ff;
+
+animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/* ==========================
+   SCROLL PROGRESS BAR
+========================== */
+
+.progress-bar{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+height:4px;
+
+width:0;
+
+background:linear-gradient(
+90deg,
+#00d4ff,
+#00ffae);
+
+z-index:10000;
+
+box-shadow:
+
+0 0 20px rgba(0,212,255,.6);
+
+}
+
+/* ==========================
+   IMAGE HOVER POLISH
+========================== */
+
+img{
+
+border-radius:18px;
+
+transition:.6s;
+
+}
+
+img:hover{
+
+filter:brightness(1.08);
+
+}
+
+/* ==========================
+   SECTION SPACING
+========================== */
+
+section{
+
+position:relative;
+
+padding-left:8%;
+
+padding-right:8%;
+
+}
+
+/* ==========================
+   GLASS PANEL
+========================== */
+
+.glass{
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.10);
+
+backdrop-filter:blur(18px);
+
+border-radius:20px;
+
+}
+
+/* ==========================
+   FADE UTILITIES
+========================== */
+
+.opacity-0{
+
+opacity:0;
+
+}
+
+.opacity-1{
+
+opacity:1;
+
+}
+
+.text-center{
+
+text-align:center;
+
+}
+
+/* ==========================
+   SMOOTH TRANSITIONS
+========================== */
+
+*{
+
+transition:
+
+background .3s,
+
+color .3s,
+
+border-color .3s,
+
+transform .3s,
+
+box-shadow .3s;
+
+}
+
+/* ==========================
+   FOCUS STATES
+========================== */
+
+button:focus,
+a:focus,
+input:focus,
+textarea:focus{
+
+outline:2px solid #00d4ff;
+
+outline-offset:4px;
+
+}
+
+/* ==========================
+   PREMIUM HOVER
+========================== */
+
+.card:hover,
+.portfolio-card:hover,
+.pricing-card:hover{
+
+cursor:pointer;
+
+}
+
+/* ==========================
+   FOOTER COPYRIGHT
+========================== */
+
+footer p{
+
+letter-spacing:.5px;
+
+}
+
+/* ==========================
+   END OF CSS
+========================== */
+
