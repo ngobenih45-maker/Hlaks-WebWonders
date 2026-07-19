@@ -7,11 +7,11 @@ html<!DOCTYPE html>
     <title>Hlaks Web Wonders | Professional Web Development</title>
     <link rel="stylesheet" href="style.css">
     <!-- Live Font Awesome asset link so your icons load correctly -->
-    <link rel="stylesheet" href="https://cloudflare.com">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
     <div class="progress-bar" id="progressBar"></div>
-Add a loading screen After the progress bar:
 <div class="loader" id="loader">
     <div class="loader-circle"></div>
 </div>
@@ -155,18 +155,21 @@ Add a loading screen After the progress bar:
         </div>
     </section>
     <!-- Google Maps Location Section -->
-    <section class="location-section" id="location" style="background-color: #f1f5f9; padding: 60px 20px; text-align: center;">
-        <div class="location-container" style="max-width: 1200px; margin: 0 auto;">
-            <h2 style="font-size: 32px; color: #0f172a; margin-bottom: 10px;">Our Operating Location</h2>
-            <p class="section-subtitle" style="color: #64748b; margin-bottom: 40px; font-size: 16px;">
-                <i class="fas fa-map-marker-alt" style="color: #1e3a8a; margin-right: 5px;"></i> 
-                Serving clients in Midrand, Johannesburg, and across South Africa remotely.
-            </p>
-            
-                </iframe>
-            </div>
-        </div>
-    </section>
+   <section class="location-section" id="location">
+    <div class="location-container">
+        <h2>Our Operating Location</h2>
+        <p>Serving clients in Midrand, Johannesburg and across South Africa.</p>
+
+        <iframe
+            src="https://www.google.com/maps?q=Midrand,+South+Africa&output=embed"
+            width="100%"
+            height="400"
+            style="border:0;"
+            loading="lazy"
+            allowfullscreen>
+        </iframe>
+    </div>
+</section>
     <!-- Footer -->
        <!-- Footer with POPIA Data Compliance Notice -->
     <footer>
@@ -199,8 +202,6 @@ Chat with us
 </span>
 
 </a>
-    <i class="fab fa-whatsapp"></i>
-    <span class="widget-tooltip">Chat with us!</span>
-</a>
+ <script src="script.js"></script>  
 </body>
 </html>
